@@ -2411,3 +2411,369 @@ Rendering template within layouts/products
 Rendering products/index
   [4;35;1mProduct Columns (5.9ms)[0m   [0mSHOW FIELDS FROM `products`[0m
 Completed in 87ms (View: 36, DB: 20) | 200 OK [http://localhost/products]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-06-26 15:34:21) [GET]
+  [4;36;1mProduct Load (0.5ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 13ms (View: 7, DB: 3) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2009-06-26 15:34:24) [POST]
+  Parameters: {"authenticity_token"=>"JsTwR8YeIUTWGzkcGRXtpWJghx4GeEMlHVPJEA4HdwY=", "id"=>"4"}
+  [4;36;1mProduct Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (1.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 4) [0m
+Rendering template within layouts/store
+Rendering store/add_to_cart
+
+ActionView::TemplateError (undefined local variable or method `item' for #<ActionView::Base:0x19ca288>) on line #2 of app/views/store/_cart_item.html.erb:
+1: <tr>
+2: 	<td><%= item.quantity %> &times; </td>
+3: 	<td><%=h item.title %></td>
+4: 	<td class="item-price"><%= number_to_currency(item.price) %></td>
+5: </tr>
+
+    app/views/store/_cart_item.html.erb:2
+    app/views/store/add_to_cart.html.erb:3
+
+Rendered rescues/_trace (94.5ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2009-06-26 15:35:49) [POST]
+  Parameters: {"authenticity_token"=>"JsTwR8YeIUTWGzkcGRXtpWJghx4GeEMlHVPJEA4HdwY=", "id"=>"4"}
+  [4;36;1mProduct Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.8ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 4) [0m
+Rendering template within layouts/store
+Rendering store/add_to_cart
+Rendered store/_cart_item (4.0ms)
+Completed in 18ms (View: 7, DB: 3) | 200 OK [http://localhost/store/add_to_cart/4]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2009-06-26 15:35:57) [POST]
+  Parameters: {"authenticity_token"=>"JsTwR8YeIUTWGzkcGRXtpWJghx4GeEMlHVPJEA4HdwY=", "id"=>"6"}
+  [4;36;1mProduct Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 6) [0m
+Rendering template within layouts/store
+Rendering store/add_to_cart
+Rendered store/_cart_item (4.9ms)
+Rendered store/_cart_item (0.5ms)
+Completed in 25ms (View: 8, DB: 4) | 200 OK [http://localhost/store/add_to_cart/6]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2009-06-26 15:36:03) [POST]
+  Parameters: {"authenticity_token"=>"JsTwR8YeIUTWGzkcGRXtpWJghx4GeEMlHVPJEA4HdwY=", "id"=>"5"}
+  [4;36;1mProduct Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.9ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 5) [0m
+Rendering template within layouts/store
+Rendering store/add_to_cart
+Rendered store/_cart_item (3.4ms)
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart_item (0.3ms)
+Completed in 17ms (View: 6, DB: 4) | 200 OK [http://localhost/store/add_to_cart/5]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-06-26 15:55:38) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+
+ActionView::TemplateError (Missing template store/_cart.erb in view path app/views) on line #16 of app/views/layouts/store.html.erb:
+13: 	<div id="columns"> 
+14: 		<div id="side"> 
+15: 			<div id="cart">
+16: 				<%= render(:partial => "cart", :object => @cart) %>
+17: 			</div>
+18: 			
+19: 			<a href="http://www....">Home</a><br /> 
+
+    app/views/layouts/store.html.erb:16
+
+Rendered rescues/_trace (98.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-06-26 15:56:21) [GET]
+  [4;36;1mProduct Load (0.6ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart_item (0.5ms)
+Rendered store/_cart_item (0.4ms)
+Rendered store/_cart_item (0.4ms)
+Rendered store/_cart (3.7ms)
+Completed in 33ms (View: 17, DB: 4) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#empty_cart (for 127.0.0.1 at 2009-06-26 15:56:58) [POST]
+  Parameters: {"authenticity_token"=>"JsTwR8YeIUTWGzkcGRXtpWJghx4GeEMlHVPJEA4HdwY="}
+Redirected to http://localhost:3000/store
+Completed in 7ms (DB: 1) | 302 Found [http://localhost/store/empty_cart]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-06-26 15:56:58) [GET]
+  [4;36;1mProduct Load (0.5ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart (0.7ms)
+Completed in 18ms (View: 8, DB: 3) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2009-06-26 15:57:02) [POST]
+  Parameters: {"authenticity_token"=>"JsTwR8YeIUTWGzkcGRXtpWJghx4GeEMlHVPJEA4HdwY=", "id"=>"4"}
+  [4;36;1mProduct Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.8ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 4) [0m
+Rendering template within layouts/store
+Rendering store/add_to_cart
+Rendered store/_cart_item (5.0ms)
+Rendered store/_cart_item (0.5ms)
+Rendered store/_cart (1.4ms)
+Completed in 25ms (View: 9, DB: 4) | 200 OK [http://localhost/store/add_to_cart/4]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2009-06-26 15:57:14) [POST]
+  Parameters: {"authenticity_token"=>"JsTwR8YeIUTWGzkcGRXtpWJghx4GeEMlHVPJEA4HdwY=", "id"=>"4"}
+  [4;36;1mProduct Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 4) [0m
+Rendering template within layouts/store
+Rendering store/add_to_cart
+Rendered store/_cart_item (3.2ms)
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart (0.9ms)
+Completed in 17ms (View: 6, DB: 4) | 200 OK [http://localhost/store/add_to_cart/4]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-06-26 15:57:21) [GET]
+  [4;36;1mProduct Load (0.5ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart_item (0.4ms)
+Rendered store/_cart (1.0ms)
+Completed in 19ms (View: 7, DB: 3) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-06-26 16:04:12) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart (0.9ms)
+Completed in 17ms (View: 7, DB: 3) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-06-26 16:04:47) [GET]
+  [4;36;1mProduct Load (0.5ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart (0.9ms)
+Completed in 17ms (View: 7, DB: 3) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-06-26 16:05:10) [GET]
+  [4;36;1mProduct Load (0.6ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart_item (0.6ms)
+Rendered store/_cart (3.5ms)
+Completed in 29ms (View: 14, DB: 4) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2009-06-26 16:05:43) [POST]
+  Parameters: {"authenticity_token"=>"JsTwR8YeIUTWGzkcGRXtpWJghx4GeEMlHVPJEA4HdwY=", "id"=>"6"}
+  [4;36;1mProduct Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.8ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 6) [0m
+Rendering template within layouts/store
+Rendering store/add_to_cart
+Rendered store/_cart_item (3.3ms)
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart (1.2ms)
+Completed in 19ms (View: 7, DB: 4) | 200 OK [http://localhost/store/add_to_cart/6]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-06-26 16:05:52) [GET]
+  [4;36;1mProduct Load (0.6ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart (1.3ms)
+Completed in 21ms (View: 7, DB: 3) | 200 OK [http://localhost/store/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-06-26 16:10:40) [GET]
+  [4;36;1mProduct Load (0.6ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart_item (0.6ms)
+Rendered store/_cart_item (0.8ms)
+Rendered store/_cart (2.7ms)
+Completed in 27ms (View: 12, DB: 4) | 200 OK [http://localhost/store/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2009-06-26 16:10:43) [POST]
+  Parameters: {"authenticity_token"=>"JsTwR8YeIUTWGzkcGRXtpWJghx4GeEMlHVPJEA4HdwY=", "id"=>"4"}
+  [4;36;1mProduct Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.8ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 4) [0m
+Redirected to http://localhost:3000/store
+Completed in 15ms (DB: 4) | 302 Found [http://localhost/store/add_to_cart/4]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-06-26 16:10:43) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart (1.3ms)
+Completed in 16ms (View: 7, DB: 3) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2009-06-26 16:10:46) [POST]
+  Parameters: {"authenticity_token"=>"JsTwR8YeIUTWGzkcGRXtpWJghx4GeEMlHVPJEA4HdwY=", "id"=>"6"}
+  [4;36;1mProduct Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (1.4ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 6) [0m
+Redirected to http://localhost:3000/store
+Completed in 12ms (DB: 4) | 302 Found [http://localhost/store/add_to_cart/6]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-06-26 16:10:46) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart (1.3ms)
+Completed in 70ms (View: 61, DB: 3) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2009-06-26 16:10:52) [POST]
+  Parameters: {"authenticity_token"=>"JsTwR8YeIUTWGzkcGRXtpWJghx4GeEMlHVPJEA4HdwY=", "id"=>"5"}
+  [4;36;1mProduct Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.9ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 5) [0m
+Redirected to http://localhost:3000/store
+Completed in 12ms (DB: 4) | 302 Found [http://localhost/store/add_to_cart/5]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-06-26 16:10:52) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart (1.8ms)
+Completed in 19ms (View: 8, DB: 3) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2009-06-26 16:11:00) [POST]
+  Parameters: {"authenticity_token"=>"JsTwR8YeIUTWGzkcGRXtpWJghx4GeEMlHVPJEA4HdwY=", "id"=>"4"}
+  [4;36;1mProduct Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.8ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 4) [0m
+Redirected to http://localhost:3000/store
+Completed in 11ms (DB: 3) | 302 Found [http://localhost/store/add_to_cart/4]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-06-26 16:11:00) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart (1.6ms)
+Completed in 17ms (View: 7, DB: 3) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2009-06-26 16:11:10) [POST]
+  Parameters: {"authenticity_token"=>"JsTwR8YeIUTWGzkcGRXtpWJghx4GeEMlHVPJEA4HdwY=", "id"=>"6"}
+  [4;36;1mProduct Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 6) [0m
+Redirected to http://localhost:3000/store
+Completed in 42ms (DB: 31) | 302 Found [http://localhost/store/add_to_cart/6]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-06-26 16:11:10) [GET]
+  [4;36;1mProduct Load (0.5ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart (1.8ms)
+Completed in 19ms (View: 8, DB: 3) | 200 OK [http://localhost/store]

@@ -2777,3 +2777,671 @@ Rendered store/_cart_item (0.3ms)
 Rendered store/_cart_item (0.3ms)
 Rendered store/_cart (1.8ms)
 Completed in 19ms (View: 8, DB: 3) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-06-26 16:55:42) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+ERROR: compiling _run_erb_app47views47store47index46html46erb RAISED compile error
+/Users/sumit/Web/rails/depot/app/views/store/index.html.erb:9: syntax error, unexpected ')'
+...o_cart', :id => product } do ).to_s); @output_buffer.concat ...
+                              ^
+/Users/sumit/Web/rails/depot/app/views/store/index.html.erb:14: syntax error, unexpected kEND, expecting ')'
+ end ; @output_buffer
+    ^
+/Users/sumit/Web/rails/depot/app/views/store/index.html.erb:17: syntax error, unexpected kEND, expecting ')'
+Function body:           def _run_erb_app47views47store47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Your Pragmatic Catalog</h1> \n"
+ for product in @products ; @output_buffer.concat " \n"
+@output_buffer.concat "\t<div class=\"entry\"> \n"
+@output_buffer.concat "\t\t"; @output_buffer.concat(( image_tag(product.image_url) ).to_s); @output_buffer.concat " \n"
+@output_buffer.concat "\t\t<h3>"; @output_buffer.concat((h product.title ).to_s); @output_buffer.concat "</h3> \n"
+@output_buffer.concat "\t\t"; @output_buffer.concat(( product.description ).to_s); @output_buffer.concat " \n"
+@output_buffer.concat "\t\t<div class=\"price-line\"> \n"
+@output_buffer.concat "\t\t<span class=\"price\">"; @output_buffer.concat(( number_to_currency(product.price) ).to_s); @output_buffer.concat "</span>\n"
+@output_buffer.concat "\t\t"; @output_buffer.concat(( form_remote_tag :url => { :action => 'add_to_cart', :id => product } do ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "\t\t\t"; @output_buffer.concat(( submit_tag "Add to Cart" ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "\t\t";  end ; @output_buffer.concat "\t\n"
+@output_buffer.concat "\t\t</div> \n"
+@output_buffer.concat "\t</div> \n"
+ end ; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/sumit/Web/rails/depot/app/views/store/index.html.erb:17:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:343:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:257:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:937:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1317:in `default_render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1323:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/abstract_store.rb:122:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `each'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/chunked.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:61:in `process'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/sumit/Web/rails/depot/app/views/store/index.html.erb:9: syntax error, unexpected ')'
+...o_cart', :id => product } do ).to_s); @output_buffer.concat ...
+                              ^
+/Users/sumit/Web/rails/depot/app/views/store/index.html.erb:14: syntax error, unexpected kEND, expecting ')'
+ end ; @output_buffer
+    ^
+/Users/sumit/Web/rails/depot/app/views/store/index.html.erb:17: syntax error, unexpected kEND, expecting ')') on line #9 of app/views/store/index.html.erb:
+6: 		<%= product.description %> 
+7: 		<div class="price-line"> 
+8: 		<span class="price"><%= number_to_currency(product.price) %></span>
+9: 		<%= form_remote_tag :url => { :action => 'add_to_cart', :id => product } do %>
+10: 			<%= submit_tag "Add to Cart" %>
+11: 		<% end %>	
+12: 		</div> 
+
+    app/views/store/index.html.erb:17:in `compile!'
+
+Rendered rescues/_trace (88.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-06-26 16:59:43) [GET]
+  [4;35;1mProduct Load (0.6ms)[0m   [0mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+ERROR: compiling _run_erb_app47views47store47index46html46erb RAISED compile error
+/Users/sumit/Web/rails/depot/app/views/store/index.html.erb:9: syntax error, unexpected ')'
+...o_cart', :id => product } do ).to_s); @output_buffer.concat ...
+                              ^
+/Users/sumit/Web/rails/depot/app/views/store/index.html.erb:14: syntax error, unexpected kEND, expecting ')'
+ end ; @output_buffer
+    ^
+/Users/sumit/Web/rails/depot/app/views/store/index.html.erb:17: syntax error, unexpected kEND, expecting ')'
+Function body:           def _run_erb_app47views47store47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Your Pragmatic Catalog</h1> \n"
+ for product in @products ; @output_buffer.concat " \n"
+@output_buffer.concat "\t<div class=\"entry\"> \n"
+@output_buffer.concat "\t\t"; @output_buffer.concat(( image_tag(product.image_url) ).to_s); @output_buffer.concat " \n"
+@output_buffer.concat "\t\t<h3>"; @output_buffer.concat((h product.title ).to_s); @output_buffer.concat "</h3> \n"
+@output_buffer.concat "\t\t"; @output_buffer.concat(( product.description ).to_s); @output_buffer.concat " \n"
+@output_buffer.concat "\t\t<div class=\"price-line\"> \n"
+@output_buffer.concat "\t\t<span class=\"price\">"; @output_buffer.concat(( number_to_currency(product.price) ).to_s); @output_buffer.concat "</span>\n"
+@output_buffer.concat "\t\t"; @output_buffer.concat(( form_remote_tag :url => { :action => 'add_to_cart', :id => product } do ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "\t\t\t"; @output_buffer.concat(( submit_tag "Add to Cart" ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "\t\t";  end ; @output_buffer.concat "\t\n"
+@output_buffer.concat "\t\t</div> \n"
+@output_buffer.concat "\t</div> \n"
+ end ; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/sumit/Web/rails/depot/app/views/store/index.html.erb:17:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:343:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:257:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:937:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1317:in `default_render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1323:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/abstract_store.rb:122:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `each'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/chunked.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:61:in `process'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/sumit/Web/rails/depot/app/views/store/index.html.erb:9: syntax error, unexpected ')'
+...o_cart', :id => product } do ).to_s); @output_buffer.concat ...
+                              ^
+/Users/sumit/Web/rails/depot/app/views/store/index.html.erb:14: syntax error, unexpected kEND, expecting ')'
+ end ; @output_buffer
+    ^
+/Users/sumit/Web/rails/depot/app/views/store/index.html.erb:17: syntax error, unexpected kEND, expecting ')') on line #9 of app/views/store/index.html.erb:
+6: 		<%= product.description %> 
+7: 		<div class="price-line"> 
+8: 		<span class="price"><%= number_to_currency(product.price) %></span>
+9: 		<%= form_remote_tag :url => { :action => 'add_to_cart', :id => product } do %>
+10: 			<%= submit_tag "Add to Cart" %>
+11: 		<% end %>	
+12: 		</div> 
+
+    app/views/store/index.html.erb:17:in `compile!'
+
+Rendered rescues/_trace (37.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-06-26 17:00:00) [GET]
+  [4;36;1mProduct Load (0.5ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+ERROR: compiling _run_erb_app47views47store47index46html46erb RAISED compile error
+/Users/sumit/Web/rails/depot/app/views/store/index.html.erb:9: syntax error, unexpected ')'
+...o_cart', :id => product } do ).to_s); @output_buffer.concat ...
+                              ^
+/Users/sumit/Web/rails/depot/app/views/store/index.html.erb:14: syntax error, unexpected kEND, expecting ')'
+ end ; @output_buffer
+    ^
+/Users/sumit/Web/rails/depot/app/views/store/index.html.erb:17: syntax error, unexpected kEND, expecting ')'
+Function body:           def _run_erb_app47views47store47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Your Pragmatic Catalog</h1> \n"
+ for product in @products ; @output_buffer.concat " \n"
+@output_buffer.concat "\t<div class=\"entry\"> \n"
+@output_buffer.concat "\t\t"; @output_buffer.concat(( image_tag(product.image_url) ).to_s); @output_buffer.concat " \n"
+@output_buffer.concat "\t\t<h3>"; @output_buffer.concat((h product.title ).to_s); @output_buffer.concat "</h3> \n"
+@output_buffer.concat "\t\t"; @output_buffer.concat(( product.description ).to_s); @output_buffer.concat " \n"
+@output_buffer.concat "\t\t<div class=\"price-line\"> \n"
+@output_buffer.concat "\t\t<span class=\"price\">"; @output_buffer.concat(( number_to_currency(product.price) ).to_s); @output_buffer.concat "</span>\n"
+@output_buffer.concat "\t\t"; @output_buffer.concat(( form_remote_tag :url => { :action => 'add_to_cart', :id => product } do ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "\t\t\t"; @output_buffer.concat(( submit_tag "Add to Cart" ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "\t\t";  end ; @output_buffer.concat "\t\n"
+@output_buffer.concat "\t\t</div> \n"
+@output_buffer.concat "\t</div> \n"
+ end ; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/sumit/Web/rails/depot/app/views/store/index.html.erb:17:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:343:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:257:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:937:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1317:in `default_render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1323:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/abstract_store.rb:122:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `each'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/chunked.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:61:in `process'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/sumit/Web/rails/depot/app/views/store/index.html.erb:9: syntax error, unexpected ')'
+...o_cart', :id => product } do ).to_s); @output_buffer.concat ...
+                              ^
+/Users/sumit/Web/rails/depot/app/views/store/index.html.erb:14: syntax error, unexpected kEND, expecting ')'
+ end ; @output_buffer
+    ^
+/Users/sumit/Web/rails/depot/app/views/store/index.html.erb:17: syntax error, unexpected kEND, expecting ')') on line #9 of app/views/store/index.html.erb:
+6: 		<%= product.description %> 
+7: 		<div class="price-line"> 
+8: 		<span class="price"><%= number_to_currency(product.price) %></span>
+9: 		<%= form_remote_tag :url => { :action => 'add_to_cart', :id => product } do %>
+10: 			<%= submit_tag "Add to Cart" %>
+11: 		<% end %>	
+12: 		</div> 
+
+    app/views/store/index.html.erb:17:in `compile!'
+
+Rendered rescues/_trace (36.4ms)
+Rendered rescues/_request_and_response (2.9ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-06-26 17:02:23) [GET]
+  [4;35;1mProduct Load (0.6ms)[0m   [0mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mProduct Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart_item (0.8ms)
+Rendered store/_cart_item (0.4ms)
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart (4.9ms)
+Completed in 36ms (View: 21, DB: 4) | 200 OK [http://localhost/store]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2009-06-26 17:02:30) [POST]
+  Parameters: {"commit"=>"Add to Cart", "authenticity_token"=>"JsTwR8YeIUTWGzkcGRXtpWJghx4GeEMlHVPJEA4HdwY=", "id"=>"4", "_"=>""}
+  [4;35;1mProduct Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.6ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 4) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (54.6ms)
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart (56.3ms)
+Completed in 77ms (View: 62, DB: 4) | 200 OK [http://localhost/store/add_to_cart/4]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2009-06-26 17:02:31) [POST]
+  Parameters: {"commit"=>"Add to Cart", "authenticity_token"=>"JsTwR8YeIUTWGzkcGRXtpWJghx4GeEMlHVPJEA4HdwY=", "id"=>"4", "_"=>""}
+  [4;35;1mProduct Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.8ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 4) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (3.4ms)
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart (4.9ms)
+Completed in 17ms (View: 6, DB: 4) | 200 OK [http://localhost/store/add_to_cart/4]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#empty_cart (for 127.0.0.1 at 2009-06-26 17:02:33) [POST]
+  Parameters: {"authenticity_token"=>"JsTwR8YeIUTWGzkcGRXtpWJghx4GeEMlHVPJEA4HdwY="}
+Redirected to http://localhost:3000/store
+Completed in 10ms (DB: 1) | 302 Found [http://localhost/store/empty_cart]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-06-26 17:02:33) [GET]
+  [4;35;1mProduct Load (0.4ms)[0m   [0mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mProduct Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart (0.5ms)
+Completed in 15ms (View: 7, DB: 3) | 200 OK [http://localhost/store]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2009-06-26 17:02:40) [POST]
+  Parameters: {"commit"=>"Add to Cart", "authenticity_token"=>"JsTwR8YeIUTWGzkcGRXtpWJghx4GeEMlHVPJEA4HdwY=", "id"=>"4", "_"=>""}
+  [4;35;1mProduct Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.6ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 4) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (3.3ms)
+Rendered store/_cart (4.0ms)
+Completed in 18ms (View: 5, DB: 4) | 200 OK [http://localhost/store/add_to_cart/4]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2009-06-26 17:02:41) [POST]
+  Parameters: {"commit"=>"Add to Cart", "authenticity_token"=>"JsTwR8YeIUTWGzkcGRXtpWJghx4GeEMlHVPJEA4HdwY=", "id"=>"4", "_"=>""}
+  [4;35;1mProduct Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.9ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 4) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (3.2ms)
+Rendered store/_cart (4.0ms)
+Completed in 17ms (View: 5, DB: 4) | 200 OK [http://localhost/store/add_to_cart/4]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2009-06-26 17:02:42) [POST]
+  Parameters: {"commit"=>"Add to Cart", "authenticity_token"=>"JsTwR8YeIUTWGzkcGRXtpWJghx4GeEMlHVPJEA4HdwY=", "id"=>"4", "_"=>""}
+  [4;35;1mProduct Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.8ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 4) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (3.5ms)
+Rendered store/_cart (4.3ms)
+Completed in 17ms (View: 5, DB: 4) | 200 OK [http://localhost/store/add_to_cart/4]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2009-06-26 17:02:44) [POST]
+  Parameters: {"commit"=>"Add to Cart", "authenticity_token"=>"JsTwR8YeIUTWGzkcGRXtpWJghx4GeEMlHVPJEA4HdwY=", "id"=>"6", "_"=>""}
+  [4;35;1mProduct Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.7ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 6) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (3.7ms)
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart (4.8ms)
+Completed in 22ms (View: 6, DB: 4) | 200 OK [http://localhost/store/add_to_cart/6]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2009-06-26 17:02:48) [POST]
+  Parameters: {"commit"=>"Add to Cart", "authenticity_token"=>"JsTwR8YeIUTWGzkcGRXtpWJghx4GeEMlHVPJEA4HdwY=", "id"=>"5", "_"=>""}
+  [4;35;1mProduct Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.8ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 5) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (4.2ms)
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart (5.8ms)
+Completed in 19ms (View: 7, DB: 3) | 200 OK [http://localhost/store/add_to_cart/5]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2009-06-26 17:02:51) [POST]
+  Parameters: {"commit"=>"Add to Cart", "authenticity_token"=>"JsTwR8YeIUTWGzkcGRXtpWJghx4GeEMlHVPJEA4HdwY=", "id"=>"4", "_"=>""}
+  [4;35;1mProduct Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.9ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 4) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (3.5ms)
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart (5.0ms)
+Completed in 18ms (View: 6, DB: 4) | 200 OK [http://localhost/store/add_to_cart/4]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-06-26 17:22:23) [GET]
+  [4;35;1mProduct Load (0.6ms)[0m   [0mSELECT * FROM `products` ORDER BY title[0m
+
+SyntaxError (/Users/sumit/Web/rails/depot/app/models/cart.rb:13: syntax error, unexpected ')', expecting kEND):
+  app/controllers/store_controller.rb:27:in `find_cart'
+  app/controllers/store_controller.rb:4:in `index'
+
+Rendered rescues/_trace (47.4ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-06-26 17:23:09) [GET]
+  [4;36;1mProduct Load (0.5ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart_item (1.1ms)
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart (4.5ms)
+Completed in 24ms (View: 11, DB: 3) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2009-06-26 17:23:13) [POST]
+  Parameters: {"commit"=>"Add to Cart", "authenticity_token"=>"JsTwR8YeIUTWGzkcGRXtpWJghx4GeEMlHVPJEA4HdwY=", "id"=>"4", "_"=>""}
+  [4;36;1mProduct Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.7ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 4) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (4.5ms)
+Rendered store/_cart_item (0.4ms)
+Rendered store/_cart_item (0.4ms)
+Rendered store/_cart (6.4ms)
+Completed in 28ms (View: 12, DB: 4) | 200 OK [http://localhost/store/add_to_cart/4]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2009-06-26 17:23:17) [POST]
+  Parameters: {"commit"=>"Add to Cart", "authenticity_token"=>"JsTwR8YeIUTWGzkcGRXtpWJghx4GeEMlHVPJEA4HdwY=", "id"=>"6", "_"=>""}
+  [4;36;1mProduct Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.8ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 6) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (3.5ms)
+Rendered store/_cart_item (0.4ms)
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart (5.1ms)
+Completed in 24ms (View: 9, DB: 4) | 200 OK [http://localhost/store/add_to_cart/6]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#empty_cart (for 127.0.0.1 at 2009-06-26 17:23:19) [POST]
+  Parameters: {"authenticity_token"=>"JsTwR8YeIUTWGzkcGRXtpWJghx4GeEMlHVPJEA4HdwY="}
+Redirected to http://localhost:3000/store
+Completed in 8ms (DB: 1) | 302 Found [http://localhost/store/empty_cart]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-06-26 17:23:19) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart (0.5ms)
+Completed in 15ms (View: 8, DB: 3) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2009-06-26 17:23:21) [POST]
+  Parameters: {"commit"=>"Add to Cart", "authenticity_token"=>"JsTwR8YeIUTWGzkcGRXtpWJghx4GeEMlHVPJEA4HdwY=", "id"=>"4", "_"=>""}
+  [4;36;1mProduct Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.8ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 4) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (5.4ms)
+Rendered store/_cart (6.6ms)
+Completed in 25ms (View: 9, DB: 4) | 200 OK [http://localhost/store/add_to_cart/4]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2009-06-26 17:23:24) [POST]
+  Parameters: {"commit"=>"Add to Cart", "authenticity_token"=>"JsTwR8YeIUTWGzkcGRXtpWJghx4GeEMlHVPJEA4HdwY=", "id"=>"4", "_"=>""}
+  [4;36;1mProduct Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.7ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 4) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (5.3ms)
+Rendered store/_cart (6.5ms)
+Completed in 26ms (View: 9, DB: 4) | 200 OK [http://localhost/store/add_to_cart/4]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2009-06-26 17:23:27) [POST]
+  Parameters: {"commit"=>"Add to Cart", "authenticity_token"=>"JsTwR8YeIUTWGzkcGRXtpWJghx4GeEMlHVPJEA4HdwY=", "id"=>"6", "_"=>""}
+  [4;36;1mProduct Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.8ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 6) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (3.1ms)
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart (4.3ms)
+Completed in 22ms (View: 6, DB: 4) | 200 OK [http://localhost/store/add_to_cart/6]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2009-06-26 17:23:36) [POST]
+  Parameters: {"commit"=>"Add to Cart", "authenticity_token"=>"JsTwR8YeIUTWGzkcGRXtpWJghx4GeEMlHVPJEA4HdwY=", "id"=>"5", "_"=>""}
+  [4;36;1mProduct Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.7ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 5) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (3.8ms)
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart (5.4ms)
+Completed in 20ms (View: 7, DB: 4) | 200 OK [http://localhost/store/add_to_cart/5]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2009-06-26 17:24:41) [POST]
+  Parameters: {"commit"=>"Add to Cart", "authenticity_token"=>"JsTwR8YeIUTWGzkcGRXtpWJghx4GeEMlHVPJEA4HdwY=", "id"=>"6", "_"=>""}
+  [4;36;1mProduct Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.8ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 6) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (3.5ms)
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart_item (0.3ms)
+Rendered store/_cart (5.5ms)
+Completed in 18ms (View: 7, DB: 3) | 200 OK [http://localhost/store/add_to_cart/6]
